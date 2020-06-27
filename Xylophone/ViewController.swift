@@ -22,9 +22,16 @@ class ViewController: UIViewController {
     
     // this function is to use it for any button in the ui
     @IBAction func  buttonPressed(_ sender: UIButton) {
-        
+        //playing with the opacity
+        sender.alpha = 0.5
         let fileName = getFileName(sender.tag)
         playSound(fileName)
+        // using async concept to get the opacity get back after the press
+       DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+       //Bring's sender's opacity back up to fully opaque.
+       sender.alpha = 1.0
+       }
+         
     }
     
     func playSound(_ fileName:String) {
@@ -48,6 +55,7 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+  
     
     // this function to determine the file name based on the tag that we give each button and this is the way to create a func that return string by -> returnType also to give the func a param we put (_ param: type) -> returnType
     func getFileName(_ tag: Int)-> String{
