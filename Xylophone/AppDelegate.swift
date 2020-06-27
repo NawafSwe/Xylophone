@@ -1,11 +1,10 @@
 //
-//  AppDelegate.swift
+//  ViewController.swift
 //  Xylophone
 //
-//  Created by Angela Yu on 28/06/2019.
-//  Copyright © 2019 The App Brewery. All rights reserved.
+//  Created by Nawaf B AL sharqi on 27/06/2020.
+//  Copyright © 2020 ALL rights reserved.
 //
-
 import UIKit
 
 @UIApplicationMain
