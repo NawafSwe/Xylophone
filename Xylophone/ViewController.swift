@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         let fileName = getFileName(sender.tag)
         playSound(fileName)
-        }
+    }
     
     func playSound(_ fileName:String) {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "wav") else { return }
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // this function to determine the file name based on the tag that we give each button 
+    // this function to determine the file name based on the tag that we give each button and this is the way to create a func that return string by -> returnType also to give the func a param we put (_ param: type) -> returnType
     func getFileName(_ tag: Int)-> String{
         switch  tag {
         case 0:
