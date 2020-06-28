@@ -12,7 +12,9 @@ import AVFoundation
 
 
 
+
 class ViewController: UIViewController {
+    //variables can be created as var or let then : DataType = ...
     var player: AVAudioPlayer?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +26,8 @@ class ViewController: UIViewController {
     @IBAction func  buttonPressed(_ sender: UIButton) {
         //playing with the opacity
         sender.alpha = 0.5
-        let fileName = getFileName(sender.tag)
-        playSound(fileName)
+        let fileName = getFileName(tag: sender.tag)
+        playSound(fileName: fileName)
         // using async concept to get the opacity get back after the press
        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
        //Bring's sender's opacity back up to fully opaque.
@@ -34,7 +36,9 @@ class ViewController: UIViewController {
          
     }
     
-    func playSound(_ fileName:String) {
+    // also you can use button.currentTitle ---- returns you the text of the button instead of using switch case
+
+    func playSound(fileName:String) {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "wav") else { return }
         
         do {
@@ -58,7 +62,7 @@ class ViewController: UIViewController {
   
     
     // this function to determine the file name based on the tag that we give each button and this is the way to create a func that return string by -> returnType also to give the func a param we put (_ param: type) -> returnType
-    func getFileName(_ tag: Int)-> String{
+    func getFileName(tag: Int)-> String{
         switch  tag {
         case 0:
             return "C"
